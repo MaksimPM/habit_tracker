@@ -137,6 +137,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+AUTH_USER_MODEL = 'users.User'
+
 SUPERUSER_EMAIL = os.getenv('SUPERUSER_EMAIL')
 SUPERUSER_FIRST_NAME = os.getenv('SUPERUSER_FIRST_NAME')
 SUPERUSER_LAST_NAME = os.getenv('SUPERUSER_LAST_NAME')
