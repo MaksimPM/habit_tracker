@@ -9,7 +9,7 @@ class User(AbstractUser):
 
     username = None
     email = models.EmailField(max_length=255, unique=True, verbose_name='email')
-    telegram_chat_id = models.IntegerField(unique=True, **NULLABLE, verbose_name='telegram chat_id')
+    telegram_chat_id = models.IntegerField(unique=True, **NULLABLE, verbose_name='telegram_chat_id')
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
