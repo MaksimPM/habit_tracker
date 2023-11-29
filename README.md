@@ -23,7 +23,7 @@ python manage.py migrate
 ```shell
 python manage.py csu
 ```
-- Установить и запуститt ```redis```.
+- Установить и запустите ```redis```.
 - Запустить проект
 - В виртуальном окружении проекта запустить celery worker командой:
 ```shell
