@@ -51,8 +51,14 @@ class HabitTestCase(APITestCase):
 
     def test_create_place(self):
         data = {'name': 'new_test'}
+        no_data = {}
         response = self.client.post('/places/', data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(response.json()['name'], data.get('name'))
+        self.assertTrue(Place.objects.filter(id=response.json()['id']).exists())
+        response = self.client.post('/places/', no_data)
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertEqual(response.json(), {'name': ['Обязательное поле.']})
 
     def test_list_place(self):
         places = list(Place.objects.all())
